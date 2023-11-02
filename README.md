@@ -68,3 +68,7 @@
 - provide the workflow with inbetween steps, can also be done in notebook
 
 ## 8. Workflow for Electron Microscopy analysis
+- added by Suse
+
+## 9. Citation
+- How to cite the code
