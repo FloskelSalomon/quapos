@@ -55,4 +55,16 @@
 ### Electron Microscopy
 - added by Suse, again
 
-## 6. 
+## 6. Software Training for Pixel Classification for Analysis of Light Microscopy Images
+- Training with Napari version ... and APOC version ...
+- the annotation used for the software training are provided in the corresponding folder in the repository 
+- annotation were drawn with the labels tool in napari version ...
+- around 100 pixels in each class (signal and background) were annotated in each image
+- images from different timepoints of postnatal development were used for the training
+      - 7 timepoints between P8-P24
+      - 3 images per timepoint
+
+## 7. Workflow for Light Microscopy analysis
+- provide the workflow with inbetween steps, can also be done in notebook
+
+## 8. Workflow for Electron Microscopy analysis
