@@ -35,14 +35,14 @@ The repository provides code for the analysis of light microscopy images with py
 This folder contains the according notebooks to analyse S-opsin stained outer segments. The demo folder includes:
 
 - `classifier.cl`: the trained supervised machine learning model to segment images into signal and background
-- 
+- `model-validation.ipynb`: example workflow how the model has been validated
+- `image-segmentation.ipynb`: demonstrating segmentation of the model of selected images
+- `feature-extraction.ipynb`: example workflow how features were extracted from one image
+- `correlation-matrix-postnatal-development.ipynb`: notebook to demonstrate how the correlation matrix for the postnatal development was computed
+- `umap-postnatal.development.ipynb`:
+- `statistical-analysis.ipynb`: statistical analysis of selected features shown in the paper
 
-- contains the classifier file
-- notebooks which were used to create the plots and the statistics
-- demo folder to demonstrate the workflow
-- data folder where all the images were uploaded to (additional repository necessary, because data = big)
-    - original czi files from the LM images ~ 50-60 GB
-    - discuss with Suse how big the EM images are
+Additionally, the folder contains subfolders were computed images, plots, and extracted features are saved accordingly. The repository here does not contain the original czi files. To access them please use the following link: ....
 
 ## 3. System Requirements
 
