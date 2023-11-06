@@ -29,6 +29,14 @@ The python code generates the following images:
 - Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, MPI-CBG, Dresden, Germany
 
 ## 2. Repository Contents
+The repository provides code for the analysis of light microscopy images with python and code for the analysis of electron microscopy images with matlab.
+
+### Light Microscopy
+This folder contains the according notebooks to analyse S-opsin stained outer segments. The demo folder includes:
+
+- `classifier.cl`: the trained supervised machine learning model to segment images into signal and background
+- 
+
 - contains the classifier file
 - notebooks which were used to create the plots and the statistics
 - demo folder to demonstrate the workflow
