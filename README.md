@@ -2,7 +2,7 @@
 - repository contains the code used to analyse outer segments of photoreceptors from LM and EM images
 
 ## 1. Overview
-The provided code analysis outer segments from light microscopy and electron microscopy images. 
+The provided code analyses outer segments from light microscopy and electron microscopy images. 
 
 ### Light Microscopy Analysis
 The provided python code intends to analyse outer segments (OS) from fluorescent ligth microscopy images. The code was applied to retinal sections from mice immunostained for the cone OS marker S-opsin and imaged with a Zeiss Apotomoe Imager Z2 and a 20x air objective. The python code makes use of a trained supervised machine learning model to segment those stained 3D images into background and signal. Afterwards, different features are measured with napari-simpleitk from segmented images and shape, intensity, and size parameters analysed.
