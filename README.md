@@ -24,7 +24,20 @@ The python code generates the following images:
 - add later
 
 ### Electron Microscopy Analysis
-- description by Suse
+A custom MATLAB code for quantification of outer segment membrande stack morphology was developed on the basis of orientation and coherency analysis… (references). The code extracts the orientation of membranes and their coherency from the image gradient of sliding image patches on transmission electron microscopic images.
+The alignment of the membrane stacks is calculated both locally (within a given radius) and globally (across individual OSs). The coherency analysis was applied to quantify the OS morphology of wild type and two inherited retinal degeneration (retinal degeneration 19 (rd19; mutation in prominin1) and rhodopsin knock-out (RhoKO)) mouse lines at 1 month of age.
+
+Briefly, the code (and attached functions) contains the following steps:
+
+Opening of files, creation of folder for processed data, reading of metadate
+Definition of box radius for gradient and coherency analysis, DsO, DsG
+Extraction of ROIs into zip folder
+Orientation analysis based on method gradient, saving of results file 1
+Coherency analysis, saving of results file 2 (+deletion of results file 1)
+Coherency analysis per ROI, saving of results file 3 (+deletion of results file 2)
+Generation of images (whole image with orientation field and ROIs, whole image (“gradient version”?) with coherency field, ROIS and their global coherency, image per ROI with orientation field, other type of image per ROI (gradient??) with coherency field, density functions of orientation fields per ROI)
+Export of mean local coherency, global coherency and global coherency angle into txt file
+
 - authors: Suse Seidemann, Karl Hofmann
 - Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, MPI-CBG, Dresden, Germany
 
@@ -44,6 +57,12 @@ This folder contains the according notebooks to analyse S-opsin stained outer se
 
 Additionally, the folder contains subfolders were computed images, plots, and extracted features are saved accordingly. The repository here does not contain the original czi files. To access them please use the following link: ....
 
+### Electron Microscopy
+
+- Beispielbilder und Beispiel-Ergebnis-files
+- "Hauptcode"
+- aufgerufene Codes/Funktionen (orientierungs und coherency analysis)
+
 ## 3. System Requirements
 
 ### Light Microscopy 
@@ -55,7 +74,11 @@ Additionally, the folder contains subfolders were computed images, plots, and ex
     - in every notebook the current package versions used could be implemented
 
 ### Electron Microscopy
-- added by Suse, hopefully
+- ImageJ
+- MATLAB
+- RAM (recommendation) or maybe access to computational cluster
+- enough storage space for data (recommendation: external harddrive)
+- Graph Pad Prism, napari or R for statistical analyses
 
 ## 4. Installation Guide
 
@@ -63,8 +86,9 @@ Additionally, the folder contains subfolders were computed images, plots, and ex
 - install mamba and the devbio napari environment (add link to Roberts notebook and the yml file)
 
 ### Electron Microscopy
-- added by Suse later
-
+- install ImageJ
+- install MATLAB
+  
 ## 5. Data access + using the code
 - all microscopy images were uploaded to the following repository
 
@@ -73,7 +97,15 @@ Additionally, the folder contains subfolders were computed images, plots, and ex
 - after putting them both into corresponding subfolders (one notebooks, and one data) it should be possible to run the python notebooks smoothly
 
 ### Electron Microscopy
-- added by Suse, again
+- download all MATLAB codes into one folder
+- use the example data (images plus ROIs) and dowload it into a folder
+  or
+- use any similar TEM images (code optimized for 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) or a Jeol JEM1400 Plus (camera: Ruby, JEOL) both running at 80kV acceleration voltage) collected in one folder
+- select ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
+  - adapt box radius for local alignment or dsG/dsO accordingly
+- adapt MATLAB code to open write folders and create output-folders
+- run code
+- do statistical analysis
 
 ## 6. Software Training for Pixel Classification for Analysis of Light Microscopy Images
 - Training with Napari version ... and APOC version ...
@@ -88,7 +120,12 @@ Additionally, the folder contains subfolders were computed images, plots, and ex
 - provide the workflow with inbetween steps, can also be done in notebook
 
 ## 8. Workflow for Electron Microscopy analysis
-- added by Suse
+- acquire 5000x images or similar
+- select ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
+  - adapt box radius for local alignment or dsG/dsO accordingly
+- adapt MATLAB code to open write folders and create output-folders
+- run code
+- do statistical analysis
 
 ## 9. Citation
 - How to cite the code
