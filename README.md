@@ -5,7 +5,7 @@ The repository contains the code which was used to quantify outer segments in th
 The provided code analyses outer segments from light microscopy and electron microscopy images. 
 
 ### Light Microscopy Analysis (QuaPOS-LM)
-The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed. Second, OS degeneration is analysed in a mutant model called Cpfl1. The provided python codes extract different shape, size, and intensity parameters and compute different plots and statistics out of them.
+The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed. Second, OS degeneration is analysed in a mutant mouse model called cone photoreceptor function loss 1 (Cpfl1). The provided python codes extract different shape, size, and intensity features and computes different plots and statistics to analyse their change over time and genotype.
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
