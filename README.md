@@ -41,17 +41,18 @@ The different subfolders have the following contents:
     - subdivided into 01-wt, and 02-cpfl
     - python scripts for the feature extraction and their respective post-processing
     - data tables are saved under folder measurements 
-- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots, heatmaps, and microscopy masks which are saved respectively under the folder plots-and-images.
+- Folder `03-plots-and-statistics`:
+    - subdivided into 01-wt, and 02-cpfl
+    - python scripts for the statistical analysis
+    - computed plots are saved under plots-and-images respectively
+- Folder `04-microscopy-images`:
+    - subdivided into 01-wt
+    - python scripts to postprocess image masks for publication
+    - respective images saved under the folder plots-and-images respectively
+ 
+Additionally, a python file `fluorescent-microscopy-analysis.py` contains different functions which were used to process image, plots, and statistics.
 
-- `classifier.cl`: the trained supervised machine learning model to segment images into signal and background
-- `model-validation.ipynb`: example workflow how the model has been validated
-- `image-segmentation.ipynb`: demonstrating segmentation of the model of selected images
-- `feature-extraction.ipynb`: example workflow how features were extracted from one image
-- `correlation-matrix-postnatal-development.ipynb`: notebook to demonstrate how the correlation matrix for the postnatal development was computed
-- `umap-postnatal.development.ipynb`:
-- `statistical-analysis.ipynb`: statistical analysis of selected features shown in the paper
-
-Additionally, the folder contains subfolders were computed images, plots, and extracted features are saved accordingly. The repository here does not contain the original czi files. To access them please use the following link: ....
+The folder data is empty in the github repository. Respective images are provided under the following repository:  ADD LINK HERE
 
 ### Electron Microscopy
 
