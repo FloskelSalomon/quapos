@@ -6,10 +6,10 @@ The provided code analyses outer segments from light microscopy and electron mic
 
 ### Light Microscopy Analysis (QuaPOS-LM)
 The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code is structured in 4 different folders. 
-- Folder 01-training-and-validation contains different scripts which were used to train a random forest pixel classifier. 
-- Folder 02-feature-extraction (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
+- Folder `01-training-and-validation` contains different scripts which were used to train a random forest pixel classifier. 
+- Folder `02-feature-extraction` (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
 According notebooks generate different data tables and save them respectively in the folder measurements.
-- Folder 03-plots-and-statistics and folder 04-microscopy-images (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots and heatmaps using `seaborn` (version: XXX) as well as processed microscopy masks and images using `pyclesperanto.prototype` (version: XXX). 
+- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots and heatmaps using `seaborn` (version: XXX) as well as processed microscopy masks and images using `pyclesperanto.prototype` (version: XXX). 
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
