@@ -1,27 +1,15 @@
-# Quantification-of-Outer-Segments-on-LM-and-EM-images (will become the title of the paper later)
-- repository contains the code used to analyse outer segments of photoreceptors from LM and EM images
+# Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopyic images across scales
+The repository contains the code which was used to quantify outer segments in the afformentioned paper. Analysis of light microscopy images was carried out with Python (3.9) and devbio-napari (add version). Analysis of electron microscopy images was carried out with matlab (version) scripts.
 
 ## 1. Overview
 The provided code analyses outer segments from light microscopy and electron microscopy images. 
 
-### Light Microscopy Analysis
-The provided python code intends to analyse outer segments (OS) from fluorescent ligth microscopy images. The code was applied to retinal sections from mice immunostained for the cone OS marker S-opsin and imaged with a Zeiss Apotomoe Imager Z2 and a 20x air objective. The python code makes use of a trained supervised machine learning model to segment those stained 3D images into background and signal. Afterwards, different features are measured with napari-simpleitk from segmented images and shape, intensity, and size parameters analysed.
+### Light Microscopy Analysis (QuaPOS-LM)
+The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. The provided python code is structured in 4 different folders. Folder 01-training-and-validation contains different scripts which were used to train a random forest pixel classifier. Folder 02-feature-extraction (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
+According notebooks generate different data tables and save them respectively in the folder measurements. Folder 03-plots-and-statistics and folder 04-microscopy-images (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots and heatmaps using `seaborn` (version: XXX) as well as processed microscopy masks and images using `pyclesperanto.prototype` (version: XXX). 
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
-
-According notebooks of the python code generate the following data tables:
-
-- "features-postnatal-development.csv": features which were measured from a postnatal development series from black 6 mice between P08 and P24
-- "features-wt-cpfl-comparison.csv": features which were measured from different timepoints of black 6 and cpfl1 mice
-
-The python code generates the following plots as images:
-
-- add later
-
-The python code generates the following images:
-
-- add later
 
 ### Electron Microscopy Analysis
 A custom MATLAB code for quantification of outer segment membrande stack morphology was developed on the basis of orientation and coherency analysis… (references). The code extracts the orientation of membranes and their coherency from the image gradient of sliding image patches on transmission electron microscopic images.
