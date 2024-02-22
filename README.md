@@ -9,7 +9,7 @@ The provided python code intends to analyse outer segments (OS) from fluorescent
 - Folder `01-training-and-validation` contains different scripts which were used to train a random forest pixel classifier. 
 - Folder `02-feature-extraction` (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
 According notebooks generate different data tables and save them respectively in the folder measurements.
-- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots and heatmaps using `seaborn` (version: XXX) as well as processed microscopy masks and images using `pyclesperanto.prototype` (version: XXX). 
+- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots, heatmaps, and microscopy masks which are saved respectively under the folder plots-and-images.
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
