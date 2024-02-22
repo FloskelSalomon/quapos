@@ -84,7 +84,7 @@ To use the provided code it is recommended to create a virtual environment with 
 ## 5. Data access + using the code
 
 ### Light Microscopy
-All data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation which were used to train and validate the random forest classifier. To use the python code please download the folder quapos-lm in a desired location and download the images in the folder data.
+All data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation which were used to train and validate the random forest classifier. To use the python code please download the folder quapos-lm in a desired location and download the images in the folder data. Additonally, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
 
 Afterwards the code can be modified and used using e.g., jupyter-notebook.
 
@@ -100,16 +100,12 @@ Afterwards the code can be modified and used using e.g., jupyter-notebook.
 - do statistical analysis
 
 ## 6. Software Training for Pixel Classification for Analysis of Light Microscopy Images
-- Training with Napari version ... and APOC version ...
-- the annotation used for the software training are provided in the corresponding folder in the repository 
-- annotation were drawn with the labels tool in napari version ...
-- around 100 pixels in each class (signal and background) were annotated in each image
-- images from different timepoints of postnatal development were used for the training
-      - 7 timepoints between P8-P24
-      - 3 images per timepoint
+The pixel classifier was trained apoc (0.12.0), provided mask were created using napari (0.4.17). Annotation were provided for a postnatal development series of mice retinal sections stained for S-opsin. To train a pixel classifier which can distinguish between 2 classes (signal and background) provided images were annotated. 100 pixel for each class were annotated in 3 biological replicates from 7 different timepoints (21 images). Afterwards the pixel classifier was validated in comparison to provided ground truth annotation from unseen images, 7 images were annotated in 3 different z-planes of 3-dimensional images.  
 
 ## 7. Workflow for Light Microscopy analysis
-- provide the workflow with inbetween steps, can also be done in notebook
+A bioinformatic workflow for the light microscopy analysis can be found under folder 02-feature-extraction-workflow. It is recommended to provide files in tif format containing 1 channel. The provided code normalises the data in accordance to the training data. The normalised image will then be segmented using the pixel classifier. Finally, some features can be extracted which can be processed subsequently. The according folder 01-wt and 02-cpfl contain python scripts which require folders of image data to extract features. For the analysis here functions from `napari-simpleitk-image-processing` (0.4.5) and `porespy` (2.3.0) to extract features.
+
+Finally, after feature extraction the folder 03-plots-and-statistics is used to analyse the data.
 
 ## 8. Workflow for Electron Microscopy analysis
 - acquire 5000x images or similar
