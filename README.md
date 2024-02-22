@@ -63,12 +63,7 @@ The folder data is empty in the github repository. Respective images are provide
 ## 3. System Requirements
 
 ### Light Microscopy 
-- python notebooks are support for Windows
-- python codes were written in Windows 10
-- python codes were tested for Windows 10, mamba version ..., and devbio napari version ...
-- the pixel classifier was written and trained with APOC version ...
-- following packages and code were used to execute the code (ask Robert whether it is possible to execute a python command, which shows the current loaded packages and their version)
-    - in every notebook the current package versions used could be implemented
+Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). An installation guide for the virtual environment can be found [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally it is recommended to install seaborn (e.g., with mamba `mamba install seaborn -c conda-forge`). The pixel classifier was trained and tested using APOC (0.12.0).
 
 ### Electron Microscopy
 - ImageJ
