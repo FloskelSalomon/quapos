@@ -50,7 +50,7 @@ The different subfolders have the following contents:
     - python scripts to postprocess image masks for publication
     - respective images saved under the folder plots-and-images respectively
  
-Additionally, a python file `fluorescent-microscopy-analysis.py` contains different functions which were used to process image, plots, and statistics.
+Additionally, a python file with custom function used to process images, plots, and statistics (`fluorescent-microscopy-analysis.py`) and a file of the virtual environment (`quapos-lm.yml`) are provided.
 
 The folder data is empty in the github repository. Respective images are provided under the following repository:  ADD LINK HERE
 
