@@ -75,18 +75,18 @@ Provided notebooks and code was written and heavily tested in Windows 10 and Pyt
 ## 4. Installation Guide
 
 ### Light Microscopy
-To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following descreption of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`.
+To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`.
 
 ### Electron Microscopy
 - install ImageJ
 - install MATLAB
   
 ## 5. Data access + using the code
-- all microscopy images were uploaded to the following repository
 
 ### Light Microscopy
-- to use the python codes provided here with the light microscopy data please download the data as well as the python notebooks
-- after putting them both into corresponding subfolders (one notebooks, and one data) it should be possible to run the python notebooks smoothly
+All data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation which were used to train and validate the random forest classifier. To use the python code please download the folder quapos-lm in a desired location and download the images in the folder data.
+
+Afterwards the code can be modified and used using e.g., jupyter-notebook.
 
 ### Electron Microscopy
 - download all MATLAB codes into one folder
