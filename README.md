@@ -5,11 +5,7 @@ The repository contains the code which was used to quantify outer segments in th
 The provided code analyses outer segments from light microscopy and electron microscopy images. 
 
 ### Light Microscopy Analysis (QuaPOS-LM)
-The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code is structured in 4 different folders. 
-- Folder `01-training-and-validation` contains different scripts which were used to train a random forest pixel classifier. 
-- Folder `02-feature-extraction` (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
-According notebooks generate different data tables and save them respectively in the folder measurements.
-- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots, heatmaps, and microscopy masks which are saved respectively under the folder plots-and-images.
+The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed. Second, OS degeneration is analysed in a mutant model called Cpfl1. The provided python codes extract different shape, size, and intensity parameters and compute different plots and statistics out of them.
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
@@ -36,7 +32,12 @@ Export of mean local coherency, global coherency and global coherency angle into
 The repository provides code for the analysis of light microscopy images with python and code for the analysis of electron microscopy images with matlab.
 
 ### Light Microscopy
-This folder contains the according notebooks to analyse S-opsin stained outer segments. The demo folder includes:
+This folder contains the according notebooks to analyse S-opsin stained outer segments. 
+
+- Folder `01-training-and-validation` contains different scripts which were used to train a random forest pixel classifier. 
+- Folder `02-feature-extraction` (subdivided into 01-wt, and 02-cpfl) contains different scripts which were used for the feature extraction from the LM images and their respective postprocessing. 
+According notebooks generate different data tables and save them respectively in the folder measurements.
+- Folder `03-plots-and-statistics` and folder `04-microscopy-images` (subdivided into 01-wt, and 02-cpfl respectively) contain different scripts which were used to quantify measured features upon extraction and create the respective plots and images. According notebooks generate plots, heatmaps, and microscopy masks which are saved respectively under the folder plots-and-images.
 
 - `classifier.cl`: the trained supervised machine learning model to segment images into signal and background
 - `model-validation.ipynb`: example workflow how the model has been validated
