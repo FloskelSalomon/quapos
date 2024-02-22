@@ -63,7 +63,7 @@ The folder data is empty in the github repository. Respective images are provide
 ## 3. System Requirements
 
 ### Light Microscopy 
-Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). An installation guide for the virtual environment can be found [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally it is recommended to install seaborn (e.g., with mamba `mamba install seaborn -c conda-forge`). The pixel classifier was trained and tested using APOC (0.12.0).
+Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0).
 
 ### Electron Microscopy
 - ImageJ
@@ -75,7 +75,7 @@ Provided notebooks and code was written and heavily tested in Windows 10 and Pyt
 ## 4. Installation Guide
 
 ### Light Microscopy
-- install mamba and the devbio napari environment (add link to Roberts notebook and the yml file)
+To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following descreption of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`.
 
 ### Electron Microscopy
 - install ImageJ
