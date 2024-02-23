@@ -38,15 +38,15 @@ The different subfolders have the following contents:
     - python scripts used to train and validate a random forest classifier
     - contains the random forest classifier `quapos_lm.cl`
 - Folder `02-feature-extraction`:
-    - subdivided into 01-wt, and 02-cpfl
+    - subdivided into `01-wt`, and `02-cpfl`
     - python scripts for the feature extraction and their respective post-processing
     - data tables are saved under folder measurements 
 - Folder `03-plots-and-statistics`:
-    - subdivided into 01-wt, and 02-cpfl
+    - subdivided into `01-wt`, and `02-cpfl`
     - python scripts for the statistical analysis
     - computed plots are saved under plots-and-images respectively
 - Folder `04-microscopy-images`:
-    - subdivided into 01-wt
+    - subdivided into `01-wt`, and `02-cpfl`
     - python scripts to postprocess image masks for publication
     - respective images saved under the folder plots-and-images respectively
  
