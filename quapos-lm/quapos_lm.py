@@ -504,3 +504,156 @@ def rescale_segmentation(segmentation, voxel_x, voxel_y, voxel_z):
     segmentation_rescaled = cle.connected_components_labeling_diamond(binary)
     
     return segmentation_rescaled
+
+def orthogonal_view(image_3d,
+                    x_coordinate,
+                    y_coordinate,
+                    z_coordinate,
+                    scale_bar_length=25,
+                    scale_colour="white",
+                    micron_length=0.323,
+                    cross_thickness=1,
+                    cross_colour="orange",
+                    save_path=None,
+                    labels=False):
+    """
+    Display orthogonal views of a 3D image with crosshairs at specified coordinates on each plane.
+
+    Parameters:
+    - image_3d (numpy.ndarray): 3D array representing the image data.
+    - x_coordinate (int): X-coordinate for the crosshair.
+    - y_coordinate (int): Y-coordinate for the crosshair.
+    - z_coordinate (int): Z-coordinate for the crosshair.
+    - scale_bar_length (int, optional): Length of the scale bar (default is 25).
+    - scale_colour (str, optional): Color of the scale bar (default is "white").
+    - micron_length (float, optional): Length of one micron in the image (default is 0.323).
+    - cross_thickness (int, optional): Thickness of the crosshair lines (default is 1).
+    - cross_colour (str, optional): Color of the crosshair lines (default is "orange").
+    - save_path (str or None, optional): File path to save the plot. If None, the plot is not saved (default is None).
+
+    Returns:
+    None
+
+    Example:
+    >>> orthogonal_view(my_3d_image, 30, 40, 20, cross_thickness=2, cross_colour="red", save_path="ortho_plot.png")
+    """
+    
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pyclesperanto_prototype as cle
+    from matplotlib.colors import ListedColormap
+    from quapos_lm import scale_bar_image
+    
+    # Compute respective plane images
+    x_y_plane_image = image_3d[z_coordinate, ...]
+    y_z_plane_image = image_3d[..., 0:image_3d.shape[1], x_coordinate].T
+    x_z_plane_image = image_3d[..., y_coordinate, 0:image_3d.shape[2]]
+    
+    # Compute scale bar and color for scale bar
+    scale_bar, scale_color = scale_bar_image(image=x_y_plane_image,
+                                             scale_length=scale_bar_length,
+                                             micron_length=micron_length,
+                                             scale_color=scale_colour)
+    
+    # Compute a cross for all three respective planes
+    # X-Y plane
+    x_y_plane_cross = np.copy(x_y_plane_image)
+    # Remove all values from the numpy array
+    x_y_plane_cross[:] = 0
+    # Add 1 at according x- and y- coordinates
+    x_y_plane_cross[:, x_coordinate - cross_thickness:x_coordinate + cross_thickness] = 1
+    x_y_plane_cross[y_coordinate - cross_thickness:y_coordinate + cross_thickness, :] = 1
+    
+    # Y-Z plane
+    y_z_plane_cross = np.copy(y_z_plane_image)
+    # Remove all values from the numpy array
+    y_z_plane_cross[:] = 0
+    # Add 1 at according x- and y- coordinates
+    y_z_plane_cross[:, z_coordinate - cross_thickness:z_coordinate + cross_thickness] = 1
+    y_z_plane_cross[y_coordinate - cross_thickness:y_coordinate + cross_thickness, :] = 1
+    
+    # X-Z plane
+    # Draw a cross for the x-z-plane as before
+    x_z_plane_cross = np.copy(x_z_plane_image)
+    # Remove all values from the numpy array
+    x_z_plane_cross[:] = 0
+    # Add 1 at according x- and y- coordinates
+    x_z_plane_cross[:, x_coordinate - cross_thickness:x_coordinate + cross_thickness] = 1
+    x_z_plane_cross[z_coordinate - cross_thickness:z_coordinate + cross_thickness, :] = 1
+    
+    # Compute colormap for cross
+    cross_colour = ListedColormap(["none", cross_colour])
+    
+    # Create a subplot of all three planes
+    fig, axs = plt.subplots(2, 2, figsize = (8, 8))
+
+    # Remove unneeded subplot
+    axs[1, 1].remove()
+
+    # Visualise x-y-plane
+    cle.imshow(x_y_plane_image,
+               plot = axs[0, 0],
+               labels=labels)
+
+    # Show scale bar
+    cle.imshow(scale_bar,
+               plot=axs[0,0],
+               colormap=scale_color)
+    
+    # Superimpose cross
+    cle.imshow(x_y_plane_cross,
+               plot = axs[0,0],
+               colormap = cross_colour)
+
+    # Remove axis ticks and labels
+    axs[0, 0].tick_params(left = False,
+                    right = False,
+                    labelleft = False,
+                    labelbottom = False, 
+                    bottom = False)
+
+    # y-z-plane
+    cle.imshow(y_z_plane_image,
+               plot = axs[0, 1],
+               labels=labels)
+
+    # y-z-cross
+    cle.imshow(y_z_plane_cross,
+               plot = axs[0, 1],
+               colormap = cross_colour)
+
+    # Remove axis ticks and labels
+    axs[0, 1].tick_params(left = False,
+                    right = False,
+                    labelleft = False,
+                    labelbottom = False, 
+                    bottom = False)
+
+    # x-z-plane
+    cle.imshow(x_z_plane_image,
+               plot = axs[1, 0],
+               labels=labels)
+
+    # x-z-cross
+    cle.imshow(x_z_plane_cross,
+               plot = axs[1, 0],
+               colormap = cross_colour)
+
+    # Remove axis and ticks
+    axs[1, 0].tick_params(left = False,
+                    right = False,
+                    labelleft = False,
+                    labelbottom = False, 
+                    bottom = False)
+
+    # Adjust spaces between the images
+    plt.subplots_adjust(wspace=-0.37,
+                        hspace=-0.37)
+    
+    # Save plot if save path is provided
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches="tight")
+        print(f"Plot is saved to: {save_path}")
+        
+    else:
+        plt.show()
