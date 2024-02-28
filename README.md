@@ -110,8 +110,8 @@ Export of mean local coherency, global coherency and global coherency angle into
 - run code
 - do statistical analysis
 
-## 9. Citation
+## Citation
 - How to cite the code
 
-## 10. Acknowledgements
+## Acknowledgements
 - comes later
