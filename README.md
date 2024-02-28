@@ -2,10 +2,10 @@
 The repository contains the code which was used to quantify outer segments in the afformentioned paper.
 
 ## 1. Overview
-The provided code analyses outer segments from light microscopy and electron microscopy images. 
+The provided codes aim to analyse outer segments from light microscopy and transmission electron microscopy images.
 
 ### Light Microscopy Analysis (QuaPOS-LM)
-The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed. Second, OS degeneration is analysed in a mutant mouse model called cone photoreceptor function loss 1 (Cpfl1). The provided python codes extract different shape, size, and intensity features and computes different plots and statistics to analyse their change over time and genotype.
+The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed in C57BL/6JRj (wildtype) animals. Second, OS degeneration is analysed in a mutant mouse model called cone photoreceptor function loss 1 (Cpfl1) and compared to age-matched WT animals. The provided python codes extract different shape, size, and intensity features and compute different plots and statistics to analyse their change over time and genotype.
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
