@@ -1,5 +1,5 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopyic images across scales
-This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM). This read me file is separated via the used method.
+This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM) as published in [link](). This read me file is separated via the used method.
 
 ## Light microscopy analaysis (QuaPOS-LM)
 
