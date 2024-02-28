@@ -1,5 +1,5 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopyic images across scales
-This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM).
+This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM). This read me file is separated via the used method.
 
 ## Light microscopy analaysis (QuaPOS-LM)
 
@@ -38,22 +38,18 @@ The folder data is empty in the github repository. Respective images are provide
 Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0).
 
 ### 4 Installation guide
-To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`.
+To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`. Alternatively, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
 
-### 5 Data access, and using the code
-Image data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation which were used to train and validate the random forest classifier. To use the python code please download the folder quapos-lm in a desired location and download the images in the folder data. Additonally, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
-
-Afterwards the code can be modified and used using e.g., jupyter-notebook.
+### 5 Data access and using the code
+Image data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation (in tif format) which were used to train and validate the random forest classifier. To use the python code please download the folder `quapos-lm` in a desired location. If you would like to work with the original image dataset, download the images from its repository in the folder `data`.
 
 ### 6 Software training for the random forest pixel classifier
-The pixel classifier was trained apoc (0.12.0), provided mask were created using napari (0.4.17). Annotation were provided for a postnatal development series of mice retinal sections stained for S-opsin. To train a pixel classifier which can distinguish between 2 classes (signal and background) provided images were annotated. 100 pixel for each class were annotated in 3 biological replicates from 7 different timepoints (21 images). Afterwards the pixel classifier was validated in comparison to provided ground truth annotation from unseen images, 7 images were annotated in 3 different z-planes of 3-dimensional images.
+The pixel classifier was trained apoc (0.12.0), provided mask were created using napari (0.4.17). Annotation were provided for a postnatal development series of mice retinal sections stained for S-opsin. To train a pixel classifier which can distinguish between 2 classes (signal and background) provided images were annotated. 100 pixel for each class were annotated in 3 biological replicates from 7 different timepoints (21 images). Afterwards establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The raw images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and its annotation. The confusion matrix was then used to calculate different performance scores. 
 
 ### 7 Workflow for light microscopy analysis
 A bioinformatic workflow for the light microscopy analysis can be found under folder 02-feature-extraction-workflow. It is recommended to provide files in tif format containing 1 channel. The provided code normalises the data in accordance to the training data. The normalised image will then be segmented using the pixel classifier. Finally, some features can be extracted which can be processed subsequently. The according folder 01-wt and 02-cpfl contain python scripts which require folders of image data to extract features. For the analysis here functions from `napari-simpleitk-image-processing` (0.4.5) and `porespy` (2.3.0) to extract features.
 
 Finally, after feature extraction the folder 03-plots-and-statistics is used to analyse the data.
-
-##
 
 ## Transmission electron microsocpy analysis, Quantification of Photoreceptor Outer Segments from Transmission Electron Microscopy Images (QuaPOS-TEM)
 
@@ -94,7 +90,7 @@ Export of mean local coherency, global coherency and global coherency angle into
 - install ImageJ
 - install MATLAB
   
-### 5 Data access + using the code
+### 5 Data access and using the code
 
 - download all MATLAB codes into one folder
 - use the example data (images plus ROIs) and dowload it into a folder
