@@ -1,7 +1,7 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopyic images across scales
-The repository contains the code which was used to quantify outer segments in the afformentioned paper.
+This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM).
 
-## Light microscopy analaysis, Quantification of Photoreceptor Outer Segments from Light Microscopy Images (QuaPOS-LM)
+## Light microscopy analaysis (QuaPOS-LM)
 
 ### 1 Overview
 The provided codes aim to analyse outer segments from light microscopy and transmission electron microscopy images.
@@ -52,6 +52,8 @@ The pixel classifier was trained apoc (0.12.0), provided mask were created using
 A bioinformatic workflow for the light microscopy analysis can be found under folder 02-feature-extraction-workflow. It is recommended to provide files in tif format containing 1 channel. The provided code normalises the data in accordance to the training data. The normalised image will then be segmented using the pixel classifier. Finally, some features can be extracted which can be processed subsequently. The according folder 01-wt and 02-cpfl contain python scripts which require folders of image data to extract features. For the analysis here functions from `napari-simpleitk-image-processing` (0.4.5) and `porespy` (2.3.0) to extract features.
 
 Finally, after feature extraction the folder 03-plots-and-statistics is used to analyse the data.
+
+##
 
 ## Transmission electron microsocpy analysis, Quantification of Photoreceptor Outer Segments from Transmission Electron Microscopy Images (QuaPOS-TEM)
 
