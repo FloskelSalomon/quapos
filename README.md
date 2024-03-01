@@ -72,7 +72,17 @@ You can install all softwar packages using conda/mamba. If you have not used con
 
     mamba create --name pos-analysis-quapos python=3.9 devbio-napari seaborn -c conda-forge
 
-To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`. Alternatively, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
+If the installation was successfull you can load the environment with the following command:
+
+    mamba activate pos-analaysis-quapos
+
+And start jupyter-lab with the following command:
+
+    jupyter-lab
+
+To use the provided code please download the folder `quapos-lm` and store it on your local machine. Afterwards you should be able to find it under the stored location using the file browser in the jupyter interface. 
+
+Alternatively, the environment could also be recreated using the provided `.yml` file in the folder `quapos-lm`.
 
 ### 7 Data access and how to use the code
 Image data was uploaded to the following [repository](). The folder quapos-lm includes the folder `01-original-data` which contains image data in czi (Zen) file format which are unprocessed images as acquired by the microscope (Apotome ImagerZ2, 20x air objective). 
