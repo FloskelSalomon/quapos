@@ -80,16 +80,14 @@ And start jupyter-lab with the following command:
 
     jupyter-lab
 
-To use the provided code please download the folder `quapos-lm` and store it on your local machine. Afterwards you should be able to find it under the stored location using the file browser in the jupyter interface. 
-
 Alternatively, the environment could also be recreated using the provided `.yml` file in the folder `quapos-lm`.
 
 ### 7 Data access and how to use the code
-Image data was uploaded to the following [repository](). The folder quapos-lm includes the folder `01-original-data` which contains image data in czi (Zen) file format which are unprocessed images as acquired by the microscope (Apotome ImagerZ2, 20x air objective). 
+To use the provided code please download the folder `quapos-lm` and store it on your local machine. Afterwards you should be able to find it under the stored location using the file browser in the jupyter lab interface. The light microscopy image dataset analysed here was uploaded to the following [repository]()` under quapos-lm. Please download the data and provide it in the data folder. The folder quapos-lm includes the folder `01-original-data` which contains image data in czi (Zen) file format which are unprocessed images as acquired by the microscope (Apotome ImagerZ2, 20x air objective) as well as the folder `02-data-for-pixel-classifier` where single channels and corresponding datasets used for testing and training the classifier are stored.
  
 The classifier file `quapos-lm.cl` is stored under the folder `01-training-and-validation`. Notebooks which require the usage of the model access the classifier with a relative file path (`quapos_lm = apoc.ObjectSegmenter(opencl_filename="../../01-training-and-validation/quapos-lm.cl"`), depending on your datastructure the relative path might need to be adjusted. If retraining of the classifier is required, (e.g., if the classifier file is unable to handle data from your microscope) the folder `01-training-and-validation` contains different notebooks which make it easy to follow the original workflow and can be adapted to your dataset.
 
-The folder `02-feature-extraction` contains jupyter notebooks which were used to extract features using [napari-simpleitk-image-processing](https://github.com/haesleinhuepf/napari-simpleitk-image-processing) (0.4.5) as well as porespy [porespy](https://github.com/PMEAL/porespy) (2.3.0). The jupyter-notebooks save the data tables as `csv` file format in the folder measurements. 
+The folder `02-feature-extraction` contains jupyter notebooks which were used to extract features using [napari-simpleitk-image-processing](https://github.com/haesleinhuepf/napari-simpleitk-image-processing) (0.4.5) as well as porespy [porespy](https://github.com/PMEAL/porespy) (2.3.0). The jupyter-notebooks save the data tables as `csv` file format in the folder measurements. Additionally, the folder contains also the different jupyter notebooks which were used to process the dataset [see 4](### 4 Workflow for light microscopy analysis). 
 
 ## Quantification of photoreceptor outer segment membrane stack alignment and morphology on transmission electron microscopy images (QuaPOS-TEM)
 
