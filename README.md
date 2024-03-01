@@ -41,8 +41,8 @@ The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/hae
 ### 4 Workflow for light microscopy analysis
 The following workflow should be applied when a new dataset should be analysed:
 
-    1. Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
-    2. 
+1. Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
+2. 
 
 ### 5 System requirements
 Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0). Provided images were provided as tif file format containing a single channel of interest.
