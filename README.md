@@ -82,8 +82,8 @@ Export of mean local coherency, global coherency and angle of global coherency i
 
 ### 3 System Requirements
 
-- ImageJ
-- MATLAB
+- ImageJ (1.54b)
+- MATLAB (R2023b)
 - RAM (recommendation) or maybe access to computational cluster
 - enough storage space for data (recommendation: external harddrive)
 - Graph Pad Prism, napari or R for statistical analyses
