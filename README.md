@@ -51,31 +51,34 @@ A bioinformatic workflow for the light microscopy analysis can be found under fo
 
 Finally, after feature extraction the folder 03-plots-and-statistics is used to analyse the data.
 
-## Transmission electron microsocpy analysis, Quantification of Photoreceptor Outer Segments from Transmission Electron Microscopy Images (QuaPOS-TEM)
+## Quantification of photoreceptor outer segment membrane stack alignment and morphology on transmission electron microscopy images (QuaPOS-TEM)
 
 ### 1 Overview
-A custom MATLAB code for quantification of outer segment membrande stack morphology was developed on the basis of orientation and coherency analysis… (references). The code extracts the orientation of membranes and their coherency from the image gradient of sliding image patches on transmission electron microscopic images.
-The alignment of the membrane stacks is calculated both locally (within a given radius) and globally (across individual OSs). The coherency analysis was applied to quantify the OS morphology of wild type and two inherited retinal degeneration (retinal degeneration 19 (rd19; mutation in prominin1) and rhodopsin knock-out (RhoKO)) mouse lines at 1 month of age.
+A custom MATLAB code for quantification of POS membrane stack morphology was developed on the basis of orientation and coherency analysis… (references). The code extracted the orientation of membranes and their coherency from the image gradient of sliding image patches on transmission electron microscopy (TEM) images.
+TEM images of retinal sections acquired at 5000x magnification (287.5 pixels = 1 µm, acquired at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) were used to analyse the POS ultrastructure. Single POS were selected as separate ROIs using the Selection Brush Tool in ImageJ (version 1.54b). POS were identified as subcellular structures with electron-dense membranes at the tip of a connecting cilium or between the mitochondria-rich inner segments and the highly pigmented RPE. All ROIs of one image were analysed individually but saved together for per-specimen analysis. 
 
-Briefly, the code (and attached functions) contains the following steps:
+During analysis with QuaPOS-TEMthe alignment of the POS membrane stacks was calculated both locally (within a given radius) and globally (across individual POS). The coherency analysis was applied to quantify the POS morphology of WT and two inherited retinal degeneration (retinal degeneration 19 (rd19; mutation in prominin1) and rhodopsin knock-out (RhoKO)) mouse lines at 1 month of age.
 
-Opening of files, creation of folder for processed data, reading of metadate
-Definition of box radius for gradient and coherency analysis, DsO, DsG
+Briefly, the code and attached functions contain the following steps:
+
+Opening of files, creation of folder for processed data, reading of metadata
+Definition of box radius for coherency analysis (here box radius for local coherency = 12 pixels), factors for downsampling
 Extraction of ROIs into zip folder
 Orientation analysis based on method gradient, saving of results file 1
 Coherency analysis, saving of results file 2 (+deletion of results file 1)
 Coherency analysis per ROI, saving of results file 3 (+deletion of results file 2)
-Generation of images (whole image with orientation field and ROIs, whole image (“gradient version”?) with coherency field, ROIS and their global coherency, image per ROI with orientation field, other type of image per ROI (gradient??) with coherency field, density functions of orientation fields per ROI)
-Export of mean local coherency, global coherency and global coherency angle into txt file
-
-- authors: Suse Seidemann, Karl Hofmann
+Generation and saving of plots (whole image with orientation field and ROIs; whole image with coherency field, ROIs and their respective global coherency; image per ROI with orientation field; image per ROI with coherency field and global coherenc; density function of local coherency per ROI; polar histogram of coherencies)
+Export of mean local coherency, global coherency and angle of global coherency into txt file
+- authors: Karl Hoffmann, Suse Seidemann
 - Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, MPI-CBG, Dresden, Germany
 
 ### 2 Repository Contents
 
-- Beispielbilder und Beispiel-Ergebnis-files
 - "Hauptcode"
 - aufgerufene Codes/Funktionen (orientierungs und coherency analysis)
+- Code for analysis of alignment of angle of global coherency per biological replicate
+- used TEM images and respective files with ROIs: repository link
+- retrieved files with collection of analysis data and generated plots: repository link 
 
 ### 3 System Requirements
 
@@ -84,31 +87,20 @@ Export of mean local coherency, global coherency and global coherency angle into
 - RAM (recommendation) or maybe access to computational cluster
 - enough storage space for data (recommendation: external harddrive)
 - Graph Pad Prism, napari or R for statistical analyses
-
-### 4 Installation Guide
-
-- install ImageJ
-- install MATLAB
   
-### 5 Data access and using the code
+### 5 Data access and workflow for using QuaPOS-TEM analysis
 
+- install ImageJ and MATLAB
 - download all MATLAB codes into one folder
-- use the example data (images plus ROIs) and dowload it into a folder
+- download the example data (images plus ROIs) 
   or
-- use any similar TEM images (code optimized for 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) or a Jeol JEM1400 Plus (camera: Ruby, JEOL) both running at 80kV acceleration voltage) collected in one folder
-- select ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
-  - adapt box radius for local alignment or dsG/dsO accordingly
-- adapt MATLAB code to open write folders and create output-folders
+- use any similar TEM images (the code was optimized for a resolution of 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) collected in one folder with a seperate subfolders for each biological sample
+- select POS as ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
+- adapt box radius for local alignment or dsG/dsO according to your resolution
+- adapt MATLAB code to open respective folders and create output-folders
 - run code
 - do statistical analysis
 
-### 8 Workflow for Electron Microscopy analysis
-- acquire 5000x images or similar
-- select ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
-  - adapt box radius for local alignment or dsG/dsO accordingly
-- adapt MATLAB code to open write folders and create output-folders
-- run code
-- do statistical analysis
 
 ## Citation
 - How to cite the code
