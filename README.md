@@ -44,15 +44,19 @@ The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/hae
     - difference of gaussian blur (sigma 1)
     - laplace box of gaussian blur (sigma 1)
 
-Annotation were provided for a postnatal development series of WT mice retinal sections stained for S-opsin. To train a pixel classifier which distinguishes between S-opsin signal and its background ground truth annotation were drawn. 100 pixel for each class were annotated in 3 biological replicates from 7 different developmental stages (21 images, from P08 to P24). After establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
+Sparse annotation were provided for a set of images from a postnatal development series of WT mice retinal sections stained for S-opsin (3 biological replicates from 7 developmental stages, 21 images). 100 pixel for each class (signal and background) were annotated in each image. After establishing the binary classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
 
 ### 4 Workflow for light microscopy analysis
 The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
 
-- Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
+- Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available).
     - Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` in their filename). This will make it possible to add a column with the corresponding biological replicate to the dataframe and group the data by that column later.
 - Store image data for analysis in a folder
-- Extract feauters
+- Extract feauters, to extract features from unprocessed images QuaPOS-LM provides the following workflow:
+    - background subtraction (top-hat-filter)
+    - intensity normalisation
+    - label prediction
+    - extract features
 - Process the dataset
     - Rescale size features
     - Filter the dataset (remove inf values and filter 5- and 95-percentiles)
@@ -61,7 +65,7 @@ The following workflow was used to analyse new image datasets and is recommended
 - Statistical data analysis
 
 ### 5 System requirements
-Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0). Provided images were provided as tif file format containing a single channel of interest.
+The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packagaes from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). 
 
 ### 6 Installation guide
 To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`. Alternatively, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
