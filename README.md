@@ -11,7 +11,7 @@ The provided random forest classifier (QuaPOS-LM) intends to predict cone POS fr
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
 
 ### 2 Repository contents for light microscopy analysis using QuaPOS-LM
-
+The python scripts are stored in the folder `quapos-lm`. The folder contains the following sub-structure.
 
 - Folder `01-training-and-validation`:
     - python scripts which were used to train and validate the random forest classifier
@@ -32,18 +32,25 @@ The provided random forest classifier (QuaPOS-LM) intends to predict cone POS fr
 Additionally, a python file with custom function used to process images, plots, and statistics (`quapos-lm.py`) and a yml-file (`quapos-lm.yml`) are provided.
 
 The folder data is empty in the github repository. Respective images are provided under the following repository:  ADD LINK HERE
+ 
+Usually, the python scripts are commented well and self-explanatory. However, if you do encounter a problem or have questions please submit a post in the issues section. 
 
-### 3 System requirements
-Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0).
+### 3 Software training and validation QuaPOS-LM
+The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/haesleinhuepf/apoc) (0.12.0), ground truth annotation were created using [napari](https://github.com/Napari/napari) (0.4.17). Annotation were provided for a postnatal development series of WT mice retinal sections stained for S-opsin. To train a pixel classifier which distinguishes between S-opsin signal and its background ground truth annotation were drawn. 100 pixel for each class were annotated in 3 biological replicates from 7 different developmental stages (21 images, from P08 to P24). After establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
 
-### 4 Installation guide
+### 4 Workflow for light microscopy analysis
+The classifier file `quapos-lm.cl` is stored under the folder `01-training-and-validation`. Notebooks which require the usage of the model access the classifier with a relative file path (`quapos_lm = apoc.ObjectSegmenter(opencl_filename="../../01-training-and-validation/quapos-lm.cl"`), depending on your datastructure the relative path might need to be adjusted. If retraining of the classifier is required, (e.g., if the classifier file is unable to handle data from your microscope) the folder `01-training-and-validation` contains different notebooks which make it easy to follow the original workflow and can be adapted to your dataset.
+
+The folder `02-feature-extraction` 
+
+### 4 System requirements
+Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0). Provided images were provided as tif file format containing a single channel of interest.
+
+### 5 Installation guide
 To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`. Alternatively, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
 
-### 5 Data access and using the code
+### 6 Data access and using the code
 Image data was uploaded to the following [repository](). This includes the raw czi images along with the respective images and annotation (in tif format) which were used to train and validate the random forest classifier. To use the python code please download the folder `quapos-lm` in a desired location. If you would like to work with the original image dataset, download the images from its repository in the folder `data`.
-
-### 6 Software training for the random forest pixel classifier
-The pixel classifier was trained apoc (0.12.0), provided mask were created using napari (0.4.17). Annotation were provided for a postnatal development series of mice retinal sections stained for S-opsin. To train a pixel classifier which can distinguish between 2 classes (signal and background) provided images were annotated. 100 pixel for each class were annotated in 3 biological replicates from 7 different timepoints (21 images). Afterwards establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The raw images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and its annotation. The confusion matrix was then used to calculate different performance scores. 
 
 ### 7 Workflow for light microscopy analysis
 A bioinformatic workflow for the light microscopy analysis can be found under folder 02-feature-extraction-workflow. It is recommended to provide files in tif format containing 1 channel. The provided code normalises the data in accordance to the training data. The normalised image will then be segmented using the pixel classifier. Finally, some features can be extracted which can be processed subsequently. The according folder 01-wt and 02-cpfl contain python scripts which require folders of image data to extract features. For the analysis here functions from `napari-simpleitk-image-processing` (0.4.5) and `porespy` (2.3.0) to extract features.
