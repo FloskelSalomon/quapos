@@ -1,25 +1,24 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales
-This repository contains the code which was used to quantify photoreceptor outer segments from light microscopy images (QuaPOS-LM) and transmission electron microscopy images (QuaPOS-TEM) as published in [link](). This read me file is separated via the used method.
+This repository contains the code which was used to quantify photoreceptor outer segments (POS) from light microscopy (QuaPOS-LM) and transmission electron microscopy (QuaPOS-TEM) images as published in [link](). The read me file is separated into two parts describing each method separately.
 
-## Light microscopy analaysis (QuaPOS-LM)
+## Light microscopy analysis (QuaPOS-LM)
+Quantification of POS number, size, shape, and intensity from cryosections stained with the cone marker S-opsin and recorded with fluorescent light microscopy.
 
 ### 1 Overview
-The provided codes aim to analyse outer segments from light microscopy and transmission electron microscopy images.
-
-The provided python code intends to analyse outer segments (OS) from fluorescent light microscopy images. Analysis was carried out in Python 3.9. The provided python code generates a random forest classifier from S-opsin stained retinal sections and enables their analysis. Afterwards the random forest classifier is used to extract different features to analyse two datasets. First, postnatal development of outer segments is analysed in C57BL/6JRj (wildtype) animals. Second, OS degeneration is analysed in a mutant mouse model called cone photoreceptor function loss 1 (Cpfl1) and compared to age-matched WT animals. The provided python codes extract different shape, size, and intensity features and compute different plots and statistics to analyse their change over time and genotype.
+The provided random forest classifier (QuaPOS-LM) intends to predict cone POS from cryosections stained with S-opsin. Here, analysis was carried out in `Python 3.9`. The code is separated in 3 main parts. Part 1, was used to train and validate the random forest classifier. Part 2 was used to extract number, size, shape, and intensity from two datasets stained for cone POS. Part 3 contains python scripts used for statistical data analysis for the two datasets. First, postnatal development was analysed in wildtype (C57BL/6JRj, WT) mice. Second, cone POS loss was analysed in a genetic mutant mouse line, cone photoreceptor function loss 1 (Cpfl1) and compared to age-matched WT-control animals.
 
 - authors: Florian Salomon, Robert Haase
 - Institute: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
 
-### 2 Repository Contents
-The repository provides jupyter notebooks with python code for the analysis of S-opsin stained light microscopy images. The main folder is `quapos-lm`, it contains the different subfolders:
+### 2 Repository contents for light microscopy analysis using QuaPOS-LM
+
 
 - Folder `01-training-and-validation`:
-    - python scripts used to train and validate a random forest classifier
+    - python scripts which were used to train and validate the random forest classifier
     - contains the random forest classifier `quapos_lm.cl`
 - Folder `02-feature-extraction`:
     - subdivided into `01-wt`, and `02-cpfl`
-    - python scripts for the feature extraction and their respective post-processing
+    - the folder contains python scripts which were used to extract features from the corresponding image datasets
     - data tables are saved under folder measurements 
 - Folder `03-plots-and-statistics`:
     - subdivided into `01-wt`, and `02-cpfl`
@@ -27,10 +26,10 @@ The repository provides jupyter notebooks with python code for the analysis of S
     - computed plots are saved under plots-and-images respectively
 - Folder `04-microscopy-images`:
     - subdivided into `01-wt`, and `02-cpfl`
-    - python scripts to postprocess image masks for publication
-    - respective images saved under the folder plots-and-images respectively
+    - python scripts to process images and create masks and images shown in the corresponding figures in the publication
+    - respective images are saved under the folder plots-and-images respectively
  
-Additionally, a python file with custom function used to process images, plots, and statistics (`quapos-lm.py`) and a file of the virtual environment (`quapos-lm.yml`) are provided.
+Additionally, a python file with custom function used to process images, plots, and statistics (`quapos-lm.py`) and a yml-file (`quapos-lm.yml`) are provided.
 
 The folder data is empty in the github repository. Respective images are provided under the following repository:  ADD LINK HERE
 
