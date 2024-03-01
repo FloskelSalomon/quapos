@@ -39,10 +39,15 @@ Usually, the python scripts are commented well and self-explanatory. However, if
 The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/haesleinhuepf/apoc) (0.12.0), ground truth annotation were created using [napari](https://github.com/Napari/napari) (0.4.17). Annotation were provided for a postnatal development series of WT mice retinal sections stained for S-opsin. To train a pixel classifier which distinguishes between S-opsin signal and its background ground truth annotation were drawn. 100 pixel for each class were annotated in 3 biological replicates from 7 different developmental stages (21 images, from P08 to P24). After establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
 
 ### 4 Workflow for light microscopy analysis
-The following workflow should be applied when a new dataset should be analysed:
+The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
 
-1. Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
-2. 
+1 Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
+2 Store image data in one folder and extract the features from the dataset
+3 Process the dataset
+3.1 Filter the dataset (remove inf values)
+3.2 Filter the 5- and 95-percentiles
+3.3 Calculate average values (for technical and biological replicates, if applicable)
+3.4 Rescale size features
 
 ### 5 System requirements
 Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0). Provided images were provided as tif file format containing a single channel of interest.
