@@ -65,7 +65,7 @@ The following workflow was used to analyse new image datasets and is recommended
 - Statistical data analysis
 
 ### 5 System requirements
-The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packagaes from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). 
+The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packagaes from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). A RAM of at least 8 GB is recommended. 
 
 ### 6 Installation guide
 To use the provided code it is recommended to create a virtual environment with a conda distribution. We recommend the distribution [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) and using the following description of setting up mamba for your local machine as [here](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/01_introduction/readme.html). Additionally, it is recommended to install the devbio-napari environment along with seaborn `mamba create --name devbio-napari-env python=3.9 devbio-napari seaborn -c conda-forge`. Alternatively, the environment could also be recreated with the provided yml file and the command `mamba env create -f quapos-lm.yml`
@@ -131,5 +131,5 @@ Export of mean local coherency, global coherency and angle of global coherency i
 ## Citation
 - How to cite the code
 
-## Acknowledgements
-- comes later
+## License
+Distributed under the terms of [BSD-3](https://opensource.org/license/BSD-3-Clause) license, "quapos" is free and open-source software.
