@@ -41,15 +41,15 @@ The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/hae
 ### 4 Workflow for light microscopy analysis
 The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
 
-1 Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
+- Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
 Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` at the end). This will make it possible to group the data by their according biological replicates later.
-2 Store image data for analysis in a folder
-3 Extract feauters and process the dataset
-3.1 Rescale size features
-3.2 Filter the dataset (remove inf values and filter 5- and 95-percentiles)
-3.3 Calculate average values (if applicable, for biological and technical replicates)
-3.4 Add additional features (e.g., number of POS labels, and summed POS volume)
-4 Statistical data analysis
+- Store image data for analysis in a folder
+- Extract feauters and process the dataset
+      - Rescale size features
+      - Filter the dataset (remove inf values and filter 5- and 95-percentiles)
+      - Calculate average values (if applicable, for biological and technical replicates)
+      - Add additional features (e.g., number of POS labels, and summed POS volume)
+- Statistical data analysis
 
 ### 5 System requirements
 Provided notebooks and code was written and heavily tested in Windows 10 and Python 3.9. A virtual environment containing devbio-napari (0.8.1) was created using mamba (1.1.0). Some of the provided scripts rely on packages ('pyclesperanto.prototype' and 'APOC') which require a graphics card for better performance. The pixel classifier was trained and tested using APOC (0.12.0). Provided images were provided as tif file format containing a single channel of interest.
