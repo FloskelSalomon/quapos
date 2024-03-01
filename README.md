@@ -42,7 +42,7 @@ The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/hae
 The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
 
 - Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
-Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` at the end). This will make it possible to group the data by their according biological replicates later.
+    - Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` at the end). This will make it possible to group the data by their according biological replicates later.
 - Store image data for analysis in a folder
 - Extract feauters
 - Process the dataset
