@@ -44,11 +44,12 @@ The following workflow was used to analyse new image datasets and is recommended
 - Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available)
 Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` at the end). This will make it possible to group the data by their according biological replicates later.
 - Store image data for analysis in a folder
-- Extract feauters and process the dataset
-      - Rescale size features
-      - Filter the dataset (remove inf values and filter 5- and 95-percentiles)
-      - Calculate average values (if applicable, for biological and technical replicates)
-      - Add additional features (e.g., number of POS labels, and summed POS volume)
+- Extract feauters
+- Process the dataset
+    - Rescale size features
+    - Filter the dataset (remove inf values and filter 5- and 95-percentiles)
+    - Calculate average values (if applicable, for biological and technical replicates)
+    - Add additional features (e.g., number of POS labels, and summed POS volume)
 - Statistical data analysis
 
 ### 5 System requirements
