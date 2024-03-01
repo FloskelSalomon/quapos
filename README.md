@@ -1,7 +1,7 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales
 This repository contains the code which was used to quantify photoreceptor outer segments (POS) from light microscopy (QuaPOS-LM) and transmission electron microscopy (QuaPOS-TEM) images as published in [link](). The read me file is separated into two parts describing each method separately.
 
-## Light microscopy analysis (QuaPOS-LM)
+## Quantification of photoreceptor outer segment (POS) number, size, shape, and intensity from light microscopy images (QuaPOS-LM)
 Quantification of POS number, size, shape, and intensity from cryosections stained with the cone marker S-opsin and recorded with fluorescent light microscopy.
 
 ### 1 Overview
@@ -89,7 +89,7 @@ The classifier file `quapos-lm.cl` is stored under the folder `01-training-and-v
 
 The folder `02-feature-extraction` contains jupyter notebooks which were used to extract features using [napari-simpleitk-image-processing](https://github.com/haesleinhuepf/napari-simpleitk-image-processing) (0.4.5) as well as porespy [porespy](https://github.com/PMEAL/porespy) (2.3.0). The jupyter-notebooks save the data tables as `csv` file format in the folder measurements. Additionally, the folder contains also different jupyter notebooks which were used to process the dataset. To provide your own images to the classifier, it should only be required to change the directories and filenames of the dataset in the according line of the jupyter notebook.
 
-After the feature extraction and preprocessing of the data tables of your own data you can start with the statistical data analysis (`03-plots-and-statistics`). The provided notebooks show plots created with [matplotlib](https://github.com/matplotlib/matplotlib) (3.7.0), and [seaborn](https://github.com/mwaskom/seaborn) (> 0.13.2) as well as corresponding statistical analysis []()
+After the feature extraction and preprocessing of the data tables of your own data you can start with the statistical data analysis (`03-plots-and-statistics`). The provided notebooks show plots created with [matplotlib](https://github.com/matplotlib/matplotlib) (3.7.0), and [seaborn](https://github.com/mwaskom/seaborn) (> 0.13.2) as well as corresponding statistical analysis using [scipy](https://github.com/scipy/scipy) (1.10.1) and [statsmodels](https://github.com/statsmodels/statsmodels) (0.14.1). In the analysis shown in the paper, only selected features were analysed. If you are interested in investigating something else you can follow the notebooks in the provided folders. Additionally, the folder `02-cpfl` provides notebooks for the analysis of two different groups over time, and can be adjusted accordingly to the groups of your own experiments. 
 
 ## Quantification of photoreceptor outer segment membrane stack alignment and morphology on transmission electron microscopy images (QuaPOS-TEM)
 
