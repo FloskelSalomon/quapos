@@ -36,7 +36,15 @@ The folder data is empty in the github repository. Respective images are provide
 Usually, the python scripts are commented well and self-explanatory. However, if you do encounter a problem or have questions please submit a post in the issues section. 
 
 ### 3 Software training and validation QuaPOS-LM
-The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/haesleinhuepf/apoc) (0.12.0), ground truth annotation were created using [napari](https://github.com/Napari/napari) (0.4.17). Annotation were provided for a postnatal development series of WT mice retinal sections stained for S-opsin. To train a pixel classifier which distinguishes between S-opsin signal and its background ground truth annotation were drawn. 100 pixel for each class were annotated in 3 biological replicates from 7 different developmental stages (21 images, from P08 to P24). After establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
+The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/haesleinhuepf/apoc) (0.12.0), ground truth annotation were created using [napari](https://github.com/Napari/napari) (0.4.17). The classifier was trained with the following settings:
+- number of trees: 100
+- number of decisions: 2
+- filter operations:
+    - gaussian blur (sigma 1)
+    - difference of gaussian blur (sigma 1)
+    - laplace box of gaussian blur (sigma 1)
+
+Annotation were provided for a postnatal development series of WT mice retinal sections stained for S-opsin. To train a pixel classifier which distinguishes between S-opsin signal and its background ground truth annotation were drawn. 100 pixel for each class were annotated in 3 biological replicates from 7 different developmental stages (21 images, from P08 to P24). After establishing the random forest pixel classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
 
 ### 4 Workflow for light microscopy analysis
 The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
