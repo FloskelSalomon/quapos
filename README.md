@@ -7,7 +7,7 @@ Quantification of POS number, size, shape, and intensity from cryosections stain
 ### 1 Overview
 The provided random forest classifier (QuaPOS-LM) intends to predict cone POS from cryosections stained with S-opsin. Here, analysis was carried out in `Python 3.9.16`. The code is separated in 3 main parts. Part 1, was used to train and validate the random forest classifier. Part 2 was used to extract number, size, shape, and intensity from two datasets stained for cone POS. Part 3 contains python scripts used for statistical data analysis for the two datasets. First, postnatal development was analysed in wildtype (C57BL/6JRj, WT) mice. Second, cone POS loss was analysed in a genetic mutant mouse line, cone photoreceptor function loss 1 (Cpfl1) and compared to age-matched WT-control animals.
 
-- authors: Florian Salomon$^1$, Robert Haase&^2&
+- authors: Florian Salomon $^1$, Robert Haase &^2&
 - Institute:
     - 1: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
     - 2: Center for scalable data analytics and artificial intelligence, Universität Leipzig, Leipzig, Germany
