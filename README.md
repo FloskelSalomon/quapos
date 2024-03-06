@@ -96,23 +96,28 @@ After the feature extraction and preprocessing of the data tables of your own da
 ## Quantification of photoreceptor outer segment membrane stack alignment and morphology on transmission electron microscopy images (QuaPOS-TEM)
 
 ### 1 Overview
-A custom MATLAB code for quantification of POS membrane stack morphology was developed on the basis of orientation and coherency analysis… (references). The code extracted the orientation of membranes and their coherency from the image gradient of sliding image patches on transmission electron microscopy (TEM) images.
-TEM images of retinal sections acquired at 5000x magnification (287.5 pixels = 1 µm, acquired at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) were used to analyse the POS ultrastructure. Single POS were selected as separate ROIs using the Selection Brush Tool in ImageJ (version 1.54b). POS were identified as subcellular structures with electron-dense membranes at the tip of a connecting cilium or between the mitochondria-rich inner segments and the highly pigmented RPE. All ROIs of one image were analysed individually but saved together for per-specimen analysis. 
+A custom MATLAB code for quantification of POS membrane stack morphology was developed on the basis of orientation and coherency analysis. 
+\[Karen Soans et. al. (2022) [Matrix topology guides collective cell migration in vivo](https://www.cell.com/current-biology/pdf/S0960-9822(22)01503-2.pdf). Current Biology, and Karl B. Hoffmann (2022) [Robust Identification of Topological Defects in Discrete Vector Fields with Applications to Biological Image Data (Doctoral dissertation)](https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-857202). Technical University Dresden\]
 
-During analysis with QuaPOS-TEMthe alignment of the POS membrane stacks was calculated both locally (within a given radius) and globally (across individual POS). The coherency analysis was applied to quantify the POS morphology of WT and two inherited retinal degeneration (retinal degeneration 19 (rd19; mutation in prominin1) and rhodopsin knock-out (RhoKO)) mouse lines at 1 month of age.
+The code extracts the orientation of membranes in transmission electron microscopy (TEM) images as the orientation of high-intensity image features, using the image gradient in 5-by5 image patches according to the Scharr operator optimized for orientational bias \[Scharr, Hanno (2000). [Optimale Operatoren in der digitalen Bildverarbeitung (Doctoral dissertation)](https://archiv.ub.uni-heidelberg.de/volltextserver/962/1/Diss.pdf).  Universität Heidelberg\].
+These orientations are nematic vectors, and their coherency (or degree of mutual alignment) is measured by the scalar nematic order parameter.
+
+TEM images of retinal sections were acquired at 5000x magnification (287.5 pixels = 1 µm, FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) and used to analyse the POS ultrastructure. Single POS were selected as separate ROIs using the Selection Brush Tool in ImageJ (version 1.54b), typicially multiple within each image. POS were identified as subcellular structures with electron-dense membranes at the tip of a connecting cilium or between the mitochondria-rich inner segments and the highly pigmented RPE. All ROIs of one image were analysed individually but saved together for per-specimen analysis. 
+
+During analysis with QuaPOS-TEM the alignment of the POS membrane stacks was calculated both locally (within a given radius) and globally (across individual POS). The coherency analysis was applied to quantify the POS morphology of WT and two inherited retinal degeneration (retinal degeneration 19 (rd19; mutation in prominin1) and rhodopsin knock-out (RhoKO)) mouse lines at 1 month of age.
 
 Briefly, the code and attached functions contain the following steps:
 
-Opening of files, creation of folder for processed data, reading of metadata
-Definition of box radius for coherency analysis (here box radius for local coherency = 12 pixels), factors for downsampling
-Extraction of ROIs into zip folder
-Orientation analysis based on method gradient, saving of results file 1
-Coherency analysis, saving of results file 2 (+deletion of results file 1)
-Coherency analysis per ROI, saving of results file 3 (+deletion of results file 2)
-Generation and saving of plots (whole image with orientation field and ROIs; whole image with coherency field, ROIs and their respective global coherency; image per ROI with orientation field; image per ROI with coherency field and global coherenc; density function of local coherency per ROI; polar histogram of coherencies)
-Export of mean local coherency, global coherency and angle of global coherency into txt file
+Within folders that can group images of the same condition and same age
+Process each image in the folder:
+Definition of box radius for coherency analysis (here box radius for local coherency = 12 pixels), factors for downsampling (here: 1)
+Orientation analysis based on method gradient across the whole image, saving of results file 1
+Coherency analysis across the whole image, saving of results file 2 (+ deletion of results file 1)
+Coherency analysis per ROI, calculating especially the mean local coherency of each ROI and the global coherency of each ROI, saving of results file 3 (+ deletion of results file 2)
+Generation and saving of plots: whole image with orientation field and ROIs; whole image with coherency field, ROIs and their respective global coherency; one image per ROI with orientation field; one image per ROI with coherency field and global coherenc; density function plots of local coherency per ROI; polar histogram of coherencies per ROI)
+Export of mean local coherency, global coherency and angle of global coherency for all ROIs in all images into text file
 - authors: Karl Hoffmann, Suse Seidemann
-- Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, MPI-CBG, Dresden, Germany
+- Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, CSBD, MPI-CBG, Dresden, Germany
 
 ### 2 Repository Contents
 
@@ -136,12 +141,12 @@ Export of mean local coherency, global coherency and angle of global coherency i
 - download all MATLAB codes into one folder
 - download the example data (images plus ROIs) 
   or
-- use any similar TEM images (the code was optimized for a resolution of 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) collected in one folder with a seperate subfolders for each biological sample
-- select POS as ROIs using ImageJ and save imagename_ROIs.roi" files for each image in same folder
+- use any similar TEM images (the code was optimized for a resolution of 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) collected in one folder with a seperate subfolder for each biological sample
+- select POS as ROIs using ImageJ and save imagename_ROIs.roi" files, keeping images of equal condition and age in one folder
 - adapt box radius for local alignment or dsG/dsO according to your resolution
 - adapt MATLAB code to open respective folders and create output-folders
-- run code
-- do statistical analysis
+- run code. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
+- perform statistical analysis
 
 
 ## Citation
