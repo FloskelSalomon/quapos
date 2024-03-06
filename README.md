@@ -128,9 +128,8 @@ Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Univers
 
 ### 2 Repository Contents
 
-- "Hauptcode"
-- aufgerufene Codes/Funktionen (orientierungs und coherency analysis)
-- Code for analysis of alignment of angle of global coherency per biological replicate
+- main file QuaPOS_TEM.m
+- functional dependencies for orientation and coherency analysis
 - used TEM images and respective files with ROIs: repository link
 - retrieved files with collection of analysis data and generated plots: repository link 
 
@@ -138,8 +137,8 @@ Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Univers
 
 - ImageJ (1.54b)
 - MATLAB (R2023b)
-- RAM (recommendation) or maybe access to computational cluster
-- enough storage space for data (recommendation: external harddrive)
+- sufficient RAM (depending on image size) or optionally access to computational cluster
+- sufficient storage space for intermediate data (recommendation: external harddrive)
 - Graph Pad Prism, napari or R for statistical analyses
   
 ### 5 Data access and workflow for using QuaPOS-TEM analysis
@@ -150,9 +149,10 @@ Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Univers
   or
 - use any similar TEM images (the code was optimized for a resolution of 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) collected in one folder with a seperate subfolder for each biological sample
 - select POS as ROIs using ImageJ and save imagename_ROIs.roi" files, keeping images of equal condition and age in one folder
-- adapt box radius for local alignment or dsG/dsO according to your resolution
-- adapt MATLAB code to open respective folders and create output-folders
-- run code. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
+- adapt MATLAB code in QuaPOS_TEM to
+    -  open your respective folders and write resutls to your output folder
+    -  use box radius for local alignment or dsG/dsO according to your resolution
+- run QuaPOS-TEM. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
 - perform statistical analysis
 
 
