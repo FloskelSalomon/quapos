@@ -97,7 +97,7 @@ After the feature extraction and preprocessing of the data tables of your own da
 
 ### 1 Overview
 A custom MATLAB code for quantification of POS membrane stack morphology was developed on the basis of orientation and coherency analysis. 
-\[Karen Soans et. al. (2022) [Matrix topology guides collective cell migration in vivo](https://www.cell.com/current-biology/pdf/S0960-9822(22)01503-2.pdf). Current Biology, and Karl B. Hoffmann (2022) [Robust Identification of Topological Defects in Discrete Vector Fields with Applications to Biological Image Data (Doctoral dissertation)](https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-857202). Technical University Dresden\]
+\[compare Karen Soans et. al. (2022) [Matrix topology guides collective cell migration in vivo](https://www.cell.com/current-biology/pdf/S0960-9822(22)01503-2.pdf). Current Biology, and Karl B. Hoffmann (2022) [Robust Identification of Topological Defects in Discrete Vector Fields with Applications to Biological Image Data (Doctoral dissertation)](https://nbn-resolving.org/urn:nbn:de:bsz:14-qucosa2-857202). Technical University Dresden\]
 
 The code extracts the orientation of membranes in transmission electron microscopy (TEM) images as the orientation of high-intensity image features, using the image gradient in 5-by5 image patches according to the Scharr operator optimized for orientational bias \[Scharr, Hanno (2000). [Optimale Operatoren in der digitalen Bildverarbeitung (Doctoral dissertation)](https://archiv.ub.uni-heidelberg.de/volltextserver/962/1/Diss.pdf).  Universität Heidelberg\].
 These orientations are nematic vectors, and their coherency (or degree of mutual alignment) is measured by the scalar nematic order parameter.
@@ -109,15 +109,22 @@ During analysis with QuaPOS-TEM the alignment of the POS membrane stacks was cal
 Briefly, the code and attached functions contain the following steps:
 
 Within folders that can group images of the same condition and same age
-Process each image in the folder:
-Definition of box radius for coherency analysis (here box radius for local coherency = 12 pixels), factors for downsampling (here: 1)
-Orientation analysis based on method gradient across the whole image, saving of results file 1
-Coherency analysis across the whole image, saving of results file 2 (+ deletion of results file 1)
-Coherency analysis per ROI, calculating especially the mean local coherency of each ROI and the global coherency of each ROI, saving of results file 3 (+ deletion of results file 2)
-Generation and saving of plots: whole image with orientation field and ROIs; whole image with coherency field, ROIs and their respective global coherency; one image per ROI with orientation field; one image per ROI with coherency field and global coherenc; density function plots of local coherency per ROI; polar histogram of coherencies per ROI)
-Export of mean local coherency, global coherency and angle of global coherency for all ROIs in all images into text file
-- authors: Karl Hoffmann, Suse Seidemann
-- Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, CSBD, MPI-CBG, Dresden, Germany
+- Process each image in the folder:
+    - Definition of box radius for coherency analysis (here box radius for local coherency = 12 pixels), factors for downsampling (here: 1)
+    - Orientation analysis based on method gradient across the whole image, saving of results file 1
+    - Coherency analysis across the whole image, saving of results file 2 (+ deletion of results file 1)
+    - Coherency analysis per ROI, calculating especially the mean local coherency of each ROI and the global coherency of each ROI, saving of results file 3 (+ deletion of results file 2)
+- Generation and saving of plots
+    - whole image with orientation field and ROIs
+    - whole image with coherency field, ROIs and their respective global coherency
+    - one image per ROI with orientation field
+    - one image per ROI with coherency field and global coherenc
+    - density function plots of local coherency per ROI
+    - polar histogram of coherencies per ROI
+- Export of mean local coherency, global coherency and angle of global coherency for all ROIs in all images into a joint file for subsequent statistical analysis
+ 
+authors: Karl Hoffmann, Suse Seidemann
+Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, CSBD, MPI-CBG, Dresden, Germany
 
 ### 2 Repository Contents
 
