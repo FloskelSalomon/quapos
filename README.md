@@ -123,8 +123,10 @@ Within folders that can group images of the same condition and same age
     - polar histogram of coherencies per ROI
 - Export of mean local coherency, global coherency and angle of global coherency for all ROIs in all images into a joint file for subsequent statistical analysis
  
-authors: Karl Hoffmann, Suse Seidemann
-Institutes: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany, CSBD, MPI-CBG, Dresden, Germany
+- authors: Karl Hoffmann $^3$, Suse Seidemann $^4$
+- Institute:
+    - 3: Center for Systems Biology Dresden (CSBD), Max Planck Institute of Molecular Cell Biology and Genetics (MPI-CBG), and Faculty of Computer Science, Technische Universität Dresden, all Dresden, Germany
+    - 4: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden
 
 ### 2 Repository Contents
 
