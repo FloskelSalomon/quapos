@@ -141,7 +141,7 @@ Within folders that can group images of the same condition and same age
 - MATLAB (R2023b)
 - sufficient RAM (depending on image size) or optionally access to computational cluster
 - sufficient storage space for intermediate data (recommendation: external harddrive)
-- Graph Pad Prism, napari or R for statistical analyses
+- Graph Pad Prism or other software for statistical analyses
   
 ### 5 Data access and workflow for using QuaPOS-TEM analysis
 
