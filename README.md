@@ -143,7 +143,7 @@ Within folders that can group images of the same condition and same age
 - sufficient storage space for intermediate data (recommendation: external harddrive)
 - Graph Pad Prism or other software for statistical analyses
   
-### 5 Data access and workflow for using QuaPOS-TEM analysis
+### 4 Data access and workflow for using QuaPOS-TEM analysis
 
 - install ImageJ and MATLAB
 - download all MATLAB codes into one folder
