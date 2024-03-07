@@ -157,9 +157,5 @@ Within folders that can group images of the same condition and same age
 - run QuaPOS-TEM. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
 - perform statistical analysis
 
-
-## Citation
-- How to cite the code
-
 ## License
 Distributed under the terms of [BSD-3](https://opensource.org/license/BSD-3-Clause) license, "quapos" is free and open-source software.
