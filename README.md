@@ -157,5 +157,15 @@ Within folders that can group images of the same condition and same age
 - run QuaPOS-TEM. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
 - perform statistical analysis
 
+## Issues
+
+If you encounter any issues with the code or accessing the microscopy dataset, please file an issue in the github repository here.
+
+## Citation
+
+If you use the code in your work, please cite the github repository as follows:
+
+Salomon, F., Seidemann, S., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. (2024). FloskelSalomon/quapos: Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales (v0.0.1). Zenodo. https://doi.org/10.5281/zenodo.10794252
+
 ## License
 Distributed under the terms of [BSD-3](https://opensource.org/license/BSD-3-Clause) license, "quapos" is free and open-source software.
