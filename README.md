@@ -1,5 +1,7 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales
-This repository contains the code which was used to quantify photoreceptor outer segments (POS) from light microscopy (QuaPOS-LM) and transmission electron microscopy (QuaPOS-TEM) images as published in [link](). The read me file is separated into two parts describing each method separately.
+This repository contains the code which was used to quantify photoreceptor outer segments (POS) from light microscopy (QuaPOS-LM) and transmission electron microscopy (QuaPOS-TEM). The corresponding image datasets are distirbuted under the BioImage Archive and can be accessed [here](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078). 
+
+Here, the two methods are described separately from each other.
 
 ## Quantification of photoreceptor outer segment (POS) number, size, shape, and intensity from light microscopy images (QuaPOS-LM)
 Quantification of POS number, size, shape, and intensity from cryosections stained with the cone marker S-opsin and recorded with fluorescent light microscopy.
@@ -85,7 +87,7 @@ And start jupyter-lab with the following command:
 Alternatively, the environment could also be recreated using the provided `.yml` file in the folder `quapos-lm`.
 
 ### 7 Data access and how to use the code
-To use the provided code please download the folder `quapos-lm` and store it on your local machine. Afterwards you should be able to find it under the stored location using the file browser in the jupyter lab interface. The light microscopy image dataset analysed here was uploaded to the following [repository]() under quapos-lm. Please download the data and provide it in the folder `data`. The folder quapos-lm includes the folder `01-original-data` which contains image data in czi (Zen) file format which are unprocessed images as acquired by the microscope (Apotome ImagerZ2, 20x air objective) as well as the folder `02-data-for-pixel-classifier` where single channels and corresponding datasets used for testing and training the classifier are stored.
+To use the provided code please download the folder `quapos-lm` and store it on your local machine. Afterwards you should be able to find it under the stored location using the file browser in the jupyter lab interface. The light microscopy image dataset analysed here was uploaded to the following [repository](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078) under quapos-lm. Please download the data and provide it in the folder `data`. The folder quapos-lm includes the folder `01-original-data` which contains image data in czi (Zen) file format which are unprocessed images as acquired by the microscope (Apotome ImagerZ2, 20x air objective) as well as the folder `02-data-for-pixel-classifier` where single channels and corresponding datasets used for testing and training the classifier are stored.
  
 The classifier file `quapos-lm.cl` is stored under the folder `01-training-and-validation`. Notebooks which require the usage of the model access the classifier with a relative file path (`quapos_lm = apoc.ObjectSegmenter(opencl_filename="../../01-training-and-validation/quapos-lm.cl"`), depending on your datastructure the relative path might need to be adjusted. If retraining of the classifier is required, (e.g., if the classifier file is unable to handle data from your microscope) the folder `01-training-and-validation` contains different notebooks which make it easy to follow the original workflow and can be adapted to your dataset.
 
@@ -161,11 +163,17 @@ Within folders that can group images of the same condition and same age
 
 If you encounter any issues with the code or accessing the microscopy dataset, please file an issue in the github repository here.
 
+## Access to Image Dataset
+
+The image datasets which were analysed here were distributed under the BioImage Archive and can be accessed here:
+
+Florian Salomon, Suse Seidemann, Karl B. Hoffmann, Thomas Kurth, Ivo F. Sbalzarini, Robert Haase, Marius Ader (2024). Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. BioStudies, S-BIAD1078. [https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078) 
+
 ## Citation
 
 If you use the code in your work, please cite the github repository as follows:
 
-Salomon, F., Seidemann, S., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. (2024). FloskelSalomon/quapos: Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales (v0.0.1). Zenodo. https://doi.org/10.5281/zenodo.10794252
+Salomon, F., Seidemann, S., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. (2024). FloskelSalomon/quapos: Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales (v0.0.1). Zenodo. [https://doi.org/10.5281/zenodo.10794252](https://doi.org/10.5281/zenodo.10794252)
 
 ## License
 Distributed under the terms of [BSD-3](https://opensource.org/license/BSD-3-Clause) license, "quapos" is free and open-source software.
