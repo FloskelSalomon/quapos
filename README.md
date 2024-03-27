@@ -165,7 +165,7 @@ If you encounter any issues with the code or accessing the microscopy dataset, p
 
 ## Access to Image Dataset
 
-The image datasets which were analysed here were distributed under the BioImage Archive and can be accessed here:
+The image datasets which were analysed here were distributed under the BioImage Archive:
 
 Florian Salomon, Suse Seidemann, Karl B. Hoffmann, Thomas Kurth, Ivo F. Sbalzarini, Robert Haase, Marius Ader (2024). Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. BioStudies, S-BIAD1078. [https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078) 
 
