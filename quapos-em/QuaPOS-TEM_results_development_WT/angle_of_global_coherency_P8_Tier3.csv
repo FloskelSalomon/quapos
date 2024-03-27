@@ -1,0 +1,16 @@
+ROI #,angle of global coherency,angle of global coherency in degree,subfolder,input image,age
+1,0.099638,5.7089,P8_Tier3,H1_9_P8_Tier3_B10_005.bmp,P8
+1,-0.074735,175.718,P8_Tier3,H1_9_P8_Tier3_B10_009.bmp,P8
+2,-0.50196,151.24,P8_Tier3,H1_9_P8_Tier3_B10_009.bmp,P8
+1,-0.67047,141.5848,P8_Tier3,H1_9_P8_Tier3_B10_010.bmp,P8
+2,-0.47447,152.8146,P8_Tier3,H1_9_P8_Tier3_B10_010.bmp,P8
+1,-0.70945,139.3515,P8_Tier3,H1_9_P8_Tier3_B10_011.bmp,P8
+1,-0.48346,152.3001,P8_Tier3,H1_9_P8_Tier3_B10_012.bmp,P8
+1,-0.9417,126.0448,P8_Tier3,H1_9_P8_Tier3_B10_014.bmp,P8
+1,-1.18,112.3929,P8_Tier3,H1_9_P8_Tier3_B10_015.bmp,P8
+2,-1.1789,112.4563,P8_Tier3,H1_9_P8_Tier3_B10_015.bmp,P8
+1,0.2545,14.5819,P8_Tier3,H1_9_P8_Tier3_B10_016.bmp,P8
+1,-0.14694,171.5809,P8_Tier3,H1_9_P8_Tier3_B10_017.bmp,P8
+1,1.4242,81.6028,P8_Tier3,H1_9_P8_Tier3_B10_018.bmp,P8
+1,-0.078837,175.483,P8_Tier3,H1_9_P8_Tier3_B10_019.bmp,P8
+1,1.1558,66.2239,P8_Tier3,H1_9_P8_Tier3_B10_020.bmp,P8

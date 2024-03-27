@@ -1,0 +1,22 @@
+ROI #,angle of global coherency,angle of global coherency in degree,subfolder,input image,age
+1,1.1404,65.3404,rd19_1month,G44_5_rd19_1month_I9_003_M.bmp,rd19
+2,1.0128,58.0295,rd19_1month,G44_5_rd19_1month_I9_003_M.bmp,rd19
+3,0.34688,19.8749,rd19_1month,G44_5_rd19_1month_I9_003_M.bmp,rd19
+4,0.44899,25.7252,rd19_1month,G44_5_rd19_1month_I9_003_M.bmp,rd19
+5,0.017051,0.97697,rd19_1month,G44_5_rd19_1month_I9_003_M.bmp,rd19
+1,1.0514,60.2427,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+2,0.34037,19.5019,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+3,-0.95672,125.1841,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+4,1.1681,66.929,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+5,0.54471,31.2097,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+6,0.89555,51.3111,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+7,0.72728,41.6701,rd19_1month,G44_5_rd19_1month_I9_004_M.bmp,rd19
+1,-0.92494,127.0046,rd19_1month,G44_5_rd19_1month_I9_005_M.bmp,rd19
+2,-0.8988,128.5024,rd19_1month,G44_5_rd19_1month_I9_005_M.bmp,rd19
+3,-0.88686,129.1864,rd19_1month,G44_5_rd19_1month_I9_005_M.bmp,rd19
+4,-0.51028,150.763,rd19_1month,G44_5_rd19_1month_I9_005_M.bmp,rd19
+5,0.83731,47.9744,rd19_1month,G44_5_rd19_1month_I9_005_M.bmp,rd19
+1,1.1537,66.1009,rd19_1month,G44_5_rd19_1month_I9_007_M.bmp,rd19
+2,-0.34805,160.0583,rd19_1month,G44_5_rd19_1month_I9_007_M.bmp,rd19
+3,0.36058,20.6597,rd19_1month,G44_5_rd19_1month_I9_007_M.bmp,rd19
+4,1.1781,67.4994,rd19_1month,G44_5_rd19_1month_I9_007_M.bmp,rd19

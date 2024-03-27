@@ -1,0 +1,13 @@
+ROI #,angle of global coherency,angle of global coherency in degree,topfolder,subfolder,input image,age
+1,0.48539,27.8105,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_003.bmp,P8
+2,0.8158,46.7417,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_003.bmp,P8
+1,0.0024953,0.14297,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_004.bmp,P8
+1,-0.15051,171.3766,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_005.bmp,P8
+2,1.1557,66.2147,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_005.bmp,P8
+1,0.43502,24.925,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_006_M.bmp,P8
+2,-0.62152,144.3893,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_006_M.bmp,P8
+3,1.3916,79.7317,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_006_M.bmp,P8
+1,0.54511,31.2328,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_008.bmp,P8
+1,-1.3362,103.4408,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_010.bmp,P8
+2,-0.953,125.397,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_010.bmp,P8
+1,0.11466,6.5696,wt_development_final_5000x_images_for_analysis_wROIs,P8_Tier1,H1_1_P8_S8_011.bmp,P8
