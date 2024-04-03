@@ -132,10 +132,12 @@ Within folders that can group images of the same condition and same age
 
 ### 2 Repository Contents
 
-- main file QuaPOS_TEM.m
-- functional dependencies for orientation and coherency analysis
-- used TEM images and respective files with ROIs: repository link
-- retrieved files with collection of analysis data and generated plots: repository link 
+- required MATLAB scripts in folder "MATLAB_scripts" including
+    - main file QuaPOS_TEM.m
+    - functional dependencies for orientation and coherency analysis
+- used TEM images and respective files with ROIs: repository in BioImage Archive
+- retrieved files with collection of analysis data in folders "QuaPOS-TEM_results_degeneration_RhoKO_rd19" and "QuaPOS-TEM_results_development_WT"
+- generated plots: repository in BioImage Archive
 
 ### 3 System Requirements
 
@@ -148,14 +150,14 @@ Within folders that can group images of the same condition and same age
 ### 4 Data access and workflow for using QuaPOS-TEM analysis
 
 - install ImageJ and MATLAB
-- download all MATLAB codes into one folder
-- download the example data (images plus ROIs) 
+- download the folder "MATLAB_scripts"
+- download example data (images plus ROIs) from repository in BioImage Archive
   or
 - use any similar TEM images (the code was optimized for a resolution of 287.5 pixels = 1 µm (5000x magnification at FEI Morgagni D268 (camera: MegaView III, Olympus) running at 80kV acceleration voltage) collected in one folder with a seperate subfolder for each biological sample
 - select POS as ROIs using ImageJ and save imagename_ROIs.roi" files, keeping images of equal condition and age in one folder
 - adapt MATLAB code in QuaPOS_TEM to
-    -  open your respective folders and write resutls to your output folder
-    -  use box radius for local alignment or dsG/dsO according to your resolution
+    -  open your respective folders and write results to your output folder
+    -  use box radius for local alignment or dsG/dsO according to your resolution (e.g. for images with a resolution of 575 pixels = 1 µm: dsG or dsO with factor 2, or local box radius of 24 pixels)
 - run QuaPOS-TEM. Intermediate result files allow for check-pointing and are re-used when the analysis is interrupted and resumed later.
 - perform statistical analysis
 
