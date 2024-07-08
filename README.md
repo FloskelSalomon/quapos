@@ -72,7 +72,7 @@ The following workflow was used to analyse new image datasets and is recommended
 The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packagaes from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). Additionally, [seaborn](https://github.com/mwaskom/seaborn) (> 0.13.2) is required to compute various plots. A RAM of at least 8 GB is recommended. Some packages could require a graphics card, if you run into any troubles please refer to [devbio-napari](https://github.com/haesleinhuepf/devbio-napari).
 
 ### 6 Installation guide
-You can install all softwar packages using conda/mamba. If you have not used conda before, please read [this guide first](https://biapol.github.io/blog/mara_lampert/getting_started_with_mambaforge_and_python/readme.html). Afterwards, you can create a new environment by entering the following command into your prompt:
+You can install all software packages using conda/mamba. If you have not used conda before, please read [this guide first](https://biapol.github.io/blog/mara_lampert/getting_started_with_mambaforge_and_python/readme.html). Afterwards, you can create a new environment by entering the following command into your prompt:
 
     mamba create --name pos-analysis-quapos python=3.9 devbio-napari seaborn -c conda-forge
 
