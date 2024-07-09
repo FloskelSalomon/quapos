@@ -1,6 +1,10 @@
 # Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales
 This repository contains the code which was used to quantify photoreceptor outer segments (POS) from light microscopy (QuaPOS-LM) and transmission electron microscopy (QuaPOS-TEM). The corresponding image datasets are distirbuted under the BioImage Archive and can be accessed [here](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078). 
 
+The methods were published in Frontiers of Moleculare Neuroscience, if you use the code please cite the paper as well:
+
+Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. Frontiers of Moleculare Neuroscience 17 (May 24, 2024). DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
+
 Here, the two methods are described separately from each other.
 
 ## Quantification of photoreceptor outer segment (POS) number, size, shape, and intensity from light microscopy images (QuaPOS-LM)
@@ -9,7 +13,7 @@ Quantification of POS number, size, shape, and intensity from cryosections stain
 ### 1 Overview
 The provided random forest classifier (QuaPOS-LM) intends to predict cone POS from cryosections stained with S-opsin. Here, analysis was carried out in `Python 3.9.16`. The code is separated in 3 main parts. Part 1, was used to train and validate the random forest classifier. Part 2 was used to extract number, size, shape, and intensity from two datasets stained for cone POS. Part 3 contains python scripts used for statistical data analysis for the two datasets. First, postnatal development was analysed in wildtype (C57BL/6JRj, WT) mice. Second, cone POS loss was analysed in a genetic mutant mouse line, cone photoreceptor function loss 1 (Cpfl1) and compared to age-matched WT-control animals.
 
-- authors: Florian Salomon $^1$, Robert Haase $^2$
+- authors: Florian Salomon $^1$, Suse Seidemann $^1$, Robert Haase $^2$
 - Institute:
     - 1: Center for Regenerative Therapies Dresden (CRTD), Technische Universität Dresden, Dresden, Germany
     - 2: Center for scalable data analytics and artificial intelligence, Universität Leipzig, Leipzig, Germany
@@ -35,7 +39,7 @@ The python scripts are stored in the folder `quapos-lm`. The folder contains the
  
 Additionally, a python file with custom function used to process images, plots, and statistics (`quapos-lm.py`) and a yml-file (`quapos-lm.yml`) are provided.
 
-The folder data is empty in the github repository. Respective images are provided under the following repository:  ADD LINK HERE
+The folder data is empty in the github repository. Respective images are provided under the following repository: [here](https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1078)
  
 Usually, the python scripts are commented well and self-explanatory. However, if you do encounter a problem or have questions please submit a post in the issues section. 
 
@@ -48,7 +52,7 @@ The pixel classifier (QuaPOS-LM) was trained using [apoc](https://github.com/hae
     - difference of gaussian blur (sigma 1)
     - laplace box of gaussian blur (sigma 1)
 
-Sparse annotation were provided for a set of images from a postnatal development series of WT mice retinal sections stained for S-opsin (3 biological replicates from 7 developmental stages, 21 images). 100 pixel for each class (signal and background) were annotated in each image. After establishing the binary classifier, its performance was estimated. A set of ground truth images were annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the correspodning ground truth annotation. A confusion matrix was then used to calculate different performance scores.
+Sparse annotations were provided for a set of images from a postnatal development series of WT mice retinal sections stained for S-opsin (3 biological replicates from 7 developmental stages, 21 images). 100 pixels for each class (signal and background) were annotated in each image. After establishing the binary classifier, its performance was estimated. A set of ground truth images was annotated. The images were predicted with QuaPOS-LM and a confusion matrix computed by comparing the prediction and the corresponding ground truth annotation. A confusion matrix was then used to calculate different performance scores.
 
 ### 4 Workflow for light microscopy analysis
 The following workflow was used to analyse new image datasets and is recommended when a new dataset should be analysed:
@@ -56,20 +60,20 @@ The following workflow was used to analyse new image datasets and is recommended
 - Separate multi-channel images and save them as `.tif` file format ([fiji/imageJ software](https://imagej.net/software/fiji/downloads) is recommended since automated [imagej macro scripts](https://forum.image.sc/t/macro-in-batch-processing-to-split-channel-and-save-single-channel-image/26426/2) are available).
     - Note: If several technical replicates per biological replicate are acquired it is recommended to add this information to the file name (e.g., all images of animal 13 get the tag `-biological-replicate-13` in their filename). This will make it possible to add a column with the corresponding biological replicate to the dataframe and group the data by that column later.
 - Store image data for analysis in a folder
-- Extract feauters, to extract features from unprocessed images QuaPOS-LM provides the following workflow:
+- To extract features from unprocessed images QuaPOS-LM provides the following workflow:
     - background subtraction (top-hat-filter)
     - intensity normalisation
     - label prediction
-    - extract features
+    - feature extraction
 - Process the dataset
     - Rescale size features
     - Filter the dataset (remove inf values and filter 5- and 95-percentiles)
     - Calculate average values (if applicable, for biological and technical replicates)
     - Add additional features (e.g., number of POS labels, and summed POS volume)
-- Statistical data analysis
+- Perform statistical data analysis
 
 ### 5 System requirements
-The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packagaes from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). Additionally, [seaborn](https://github.com/mwaskom/seaborn) (> 0.13.2) is required to compute various plots. A RAM of at least 8 GB is recommended. Some packages could require a graphics card, if you run into any troubles please refer to [devbio-napari](https://github.com/haesleinhuepf/devbio-napari).
+The provided code was written in Python (3.9.16) [jupyter-lab](https://github.com/jupyterlab/jupyterlab) (3.6.1). The provided notebooks were heavily tested in Windows 10. The pixel classifier was trained and applied to image data using [APOC](https://github.com/haesleinhuepf/apoc). The notebooks rely on different software packages from [devbio-napari](https://github.com/haesleinhuepf/devbio-napari) (version 0.8.1 was used here) which was installed in a virtual environment using [mamba/miniforge](https://github.com/conda-forge/miniforge#mambaforge) (1.1.0). Additionally, [seaborn](https://github.com/mwaskom/seaborn) (> 0.13.2) is required to compute various plots. A RAM of at least 8 GB is recommended. Some packages could require a graphics card, if you run into any troubles please refer to [devbio-napari](https://github.com/haesleinhuepf/devbio-napari).
 
 ### 6 Installation guide
 You can install all software packages using conda/mamba. If you have not used conda before, please read [this guide first](https://biapol.github.io/blog/mara_lampert/getting_started_with_mambaforge_and_python/readme.html). Afterwards, you can create a new environment by entering the following command into your prompt:
@@ -173,7 +177,9 @@ Florian Salomon, Suse Seidemann, Karl B. Hoffmann, Thomas Kurth, Ivo F. Sbalzari
 
 ## Citation
 
-If you use the code in your work, please cite the github repository as follows:
+If you use the code in your work, please cite the paper and github repository as follows:
+
+Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. Frontiers of Moleculare Neuroscience 17 (May 24, 2024). DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
 
 Salomon, F., Seidemann, S., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. (2024). FloskelSalomon/quapos: Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales (v0.0.1). Zenodo. [https://doi.org/10.5281/zenodo.10794252](https://doi.org/10.5281/zenodo.10794252)
 
