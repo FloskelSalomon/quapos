@@ -3,7 +3,7 @@ This repository contains the code which was used to quantify photoreceptor outer
 
 The methods were published in Frontiers of Moleculare Neuroscience, if you use the code please cite the paper as well:
 
-Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. Frontiers of Moleculare Neuroscience 17 (May 24, 2024). DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
+Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. *Frontiers of Moleculare Neuroscience 17 (May 24, 2024).* DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
 
 Here, the two methods are described separately from each other.
 
