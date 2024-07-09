@@ -179,7 +179,7 @@ Florian Salomon, Suse Seidemann, Karl B. Hoffmann, Thomas Kurth, Ivo F. Sbalzari
 
 If you use the code in your work, please cite the paper and github repository as follows:
 
-Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. Frontiers of Moleculare Neuroscience 17 (May 24, 2024). DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
+Seidemann, S., Salomon, F., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales. *Frontiers of Moleculare Neuroscience 17 (May 24, 2024).* DOI: [https://doi.org/10.3389/fnmol.2024.1398447](https://doi.org/10.3389/fnmol.2024.1398447)
 
 Salomon, F., Seidemann, S., Hoffmann, K. B., Kurth, T., Sbalzarini, I. F., Haase, R., & Ader, M. (2024). FloskelSalomon/quapos: Automated quantification of photoreceptor outer segments in developing and degenerating retinas on microscopy images across scales (v0.0.1). Zenodo. [https://doi.org/10.5281/zenodo.10794252](https://doi.org/10.5281/zenodo.10794252)
 
